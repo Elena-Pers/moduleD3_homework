@@ -10,8 +10,8 @@ class NewsList(ListView):
     model = News  # указываем модель, объекты которой мы будем выводить
     template_name = 'news.html'  # указываем имя шаблона, в котором будет лежать HTML, в нём будут все инструкции о том, как именно пользователю должны вывестись наши объекты
     context_object_name = 'news'  # это имя списка, в котором будут лежать все объекты, его надо указать, чтобы обратиться к самому списку объектов через HTML-шаблон
-    queryset = News.objects.order_by('-id')
-    #queryset = News.objects.order_by('-creationTime')
+    #queryset = News.objects.order_by('-id')
+    queryset = News.objects.order_by('-creationTime')
 
     # метод get_context_data нужен нам для того, чтобы мы могли передать переменные в шаблон. В возвращаемом словаре context будут храниться все переменные. Ключи этого словари и есть переменные, к которым мы сможем потом обратиться через шаблон
     def get_context_data(self, **kwargs):

@@ -1,0 +1,21 @@
+
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+
+    {% if new %}
+       <h2>{{ new.name}}</h2>
+       <h2>{{ new.creationTime.day}}-{{ new.creationTime.month}}-{{new.creationTime.year}} {{ new.creationTime.hour}}:{{ new.creationTime.minute}}</h2>
+       <p>{{ new.description}}</p>
+
+
+
+
+    {% else %}
+        <h2>Новостей нет!</h2>
+    {% endif %}
+{% endblock content %}
